@@ -93,6 +93,45 @@ combo.current(0)                         #Automatically select value at 0
 combo.set("hello")                     #set the combobox value to mention value
 combo.pack()
 
+# 27-06*2026
+
+#Frame                  Used to Organnise things on window
+frame = tk.Frame(bg="blue", width=90, height=90, borderwidth=5, relief="raised")
+frame.pack(padx=50, pady=50)
+tk.Label(frame, text="Text inside Frame", bg="blue").pack()
+tk.Label(frame, text="Text inside Frame", bg="blue").pack()
+tk.Label(frame, text="Text inside Frame", bg="blue").pack()
+tk.Label(frame, text="Text inside Frame", bg="blue").pack()
+tk.Entry(frame).pack(pady=20)
+
+
+#LabelFrame             Used to at label on frame border
+LabelF = tk.LabelFrame(win, text="Login", font=("Arial", 25, "bold"), bg="cyan", labelanchor="w")
+LabelF.pack(side="top")
+tk.Label(LabelF, text="yo wassup", bg="yellow").pack()
+
+#PanedWindow            used to create a paned window where we can change size 
+PanedWIN = tk.PanedWindow(win)
+PanedWIN.pack()
+left = tk.LabelFrame(PanedWIN, text="hello", fg="white", bg="black", width=50, height=50)
+right = tk.Frame(PanedWIN, bg="red", width=50, height=50)
+PanedWIN.add(left)
+PanedWIN.add(right)                 #used to add pane
+#PanedWIN.forget(left)               #used to remove Pane
+
+
+#NoteBook                           creates new tab
+NoteBook = ttk.Notebook(win)
+NoteBook.pack()
+
+tab1 = tk.Frame(NoteBook)
+tab2 = tk.Frame(NoteBook)
+
+NoteBook.add(tab1, text="Home")
+NoteBook.add(tab2, text="About us")
+NoteBook.select(tab2)               #used to select a specific tab when open an page
+print(NoteBook.tabs())
+NoteBook.pack(expand=True, fill="both", side="top")
 
 
 win.mainloop()                      #Always at last to show display
