@@ -134,8 +134,6 @@ print(NoteBook.tabs())
 NoteBook.pack(expand=True, fill="both", side="top")
 
 
-labelplace = tk.Label(win, text="Place position")
-labelplace.place(relx=0.7, y=99.9)                   #used to locate widget at exact position
-                                                                #relx rely (0.0 left or top, 0.5 center, 1.0 right or bottom)
+
 
 win.mainloop()                      #Always at last to show display
